@@ -1,0 +1,938 @@
+[
+  {
+    "id": "major_0_the_fool",
+    "name": "The Fool",
+    "arcana_type": "Major",
+    "suit": null,
+    "value": 0,
+    "meanings": {
+      "upright": "Innocence. New beginnings. Free spirit. Spontaneity. Adventure. Unlimited possibilities.",
+      "reversed": "Recklessness. Naivety. Foolish risk-taking. Hesitation. Blind enthusiasm."
+    },
+    "description": "Embrace the journey with open arms and a leap of faith."
+  },
+  {
+    "id": "major_1_the_magician",
+    "name": "The Magician",
+    "arcana_type": "Major",
+    "suit": null,
+    "value": 1,
+    "meanings": {
+      "upright": "Manifestation. Resourcefulness. Power. Skill. Willpower. Creation.",
+      "reversed": "Illusion. Manipulation. Unused talent. Confusion. Poor planning."
+    },
+    "description": "You have all the tools you need to make magic happen."
+  },
+  {
+    "id": "major_2_the_high_priestess",
+    "name": "The High Priestess",
+    "arcana_type": "Major",
+    "suit": null,
+    "value": 2,
+    "meanings": {
+      "upright": "Intuition. Sacred knowledge. Divine feminine. Mystery. Subconscious mind.",
+      "reversed": "Secrets. Disconnected intuition. Superficiality. Repressed feelings."
+    },
+    "description": "Look beyond the surface and listen to your inner whisper."
+  },
+  {
+    "id": "major_3_the_empress",
+    "name": "The Empress",
+    "arcana_type": "Major",
+    "suit": null,
+    "value": 3,
+    "meanings": {
+      "upright": "Femininity. Beauty. Nature. Nurturing. Abundance. Fertility. Creation.",
+      "reversed": "Creative block. Dependence. Smothering. Empty promises. Neglect."
+    },
+    "description": "Abundance surrounds you when you nurture your environment."
+  },
+  {
+    "id": "major_4_the_emperor",
+    "name": "The Emperor",
+    "arcana_type": "Major",
+    "suit": null,
+    "value": 4,
+    "meanings": {
+      "upright": "Authority. Structure. Control. Leadership. Protection. Stability. Discipline.",
+      "reversed": "Tyranny. Lack of discipline. Inflexibility. Rigidity. Dominance."
+    },
+    "description": "Build strong foundations through wisdom and clear rules."
+  },
+  {
+    "id": "major_5_the_hierophant",
+    "name": "The Hierophant",
+    "arcana_type": "Major",
+    "suit": null,
+    "value": 5,
+    "meanings": {
+      "upright": "Spiritual wisdom. Tradition. Conformity. Beliefs. Institutions. Guidance.",
+      "reversed": "Rebellion. Unconventionality. New perspectives. Freedom. Rigid dogmatism."
+    },
+    "description": "Seek truth through guidance, but honor your own inner beliefs."
+  },
+  {
+    "id": "major_6_the_lovers",
+    "name": "The Lovers",
+    "arcana_type": "Major",
+    "suit": null,
+    "value": 6,
+    "meanings": {
+      "upright": "Inspiration. Motivation. Love. Beauty. Action. Commitment. Choices. Unity.",
+      "reversed": "Disharmony. Mismatch of values. Broken relationship. Indecision."
+    },
+    "description": "Celebrate the love in your life."
+  },
+  {
+    "id": "major_7_the_chariot",
+    "name": "The Chariot",
+    "arcana_type": "Major",
+    "suit": null,
+    "value": 7,
+    "meanings": {
+      "upright": "Control. Willpower. Success. Action. Determination. Victory. Focus.",
+      "reversed": "Lack of control. Oppression. Aggression. Lack of direction. Obstacles."
+    },
+    "description": "Drive forward with focus; willpower overcomes opposition."
+  },
+  {
+    "id": "major_8_strength",
+    "name": "Strength",
+    "arcana_type": "Major",
+    "suit": null,
+    "value": 8,
+    "meanings": {
+      "upright": "Courage. Compassion. Patience. Inner strength. Endurance. Soft power.",
+      "reversed": "Self-doubt. Weakness. Raw emotion. Low energy. Insecurity."
+    },
+    "description": "True power comes from gentle persistence and inner calm."
+  },
+  {
+    "id": "major_9_the_hermit",
+    "name": "The Hermit",
+    "arcana_type": "Major",
+    "suit": null,
+    "value": 9,
+    "meanings": {
+      "upright": "Soul-searching. Introspection. Solitude. Inner guidance. Reflection.",
+      "reversed": "Isolation. Loneliness. Withdrawal. Lost your way. Paranoia."
+    },
+    "description": "Step away from the noise to find your inner light."
+  },
+  {
+    "id": "major_10_wheel_of_fortune",
+    "name": "Wheel of Fortune",
+    "arcana_type": "Major",
+    "suit": null,
+    "value": 10,
+    "meanings": {
+      "upright": "Change. Chance. Fate. Happiness. Cycles. Destiny. Luck. Karma.",
+      "reversed": "Misfortune. Failure. Chaos. Bad luck. Broken sequences. Returning again to the same situation."
+    },
+    "description": "You have steangth in new beginnings, the cycle restarts."
+  },
+  {
+    "id": "major_11_justice",
+    "name": "Justice",
+    "arcana_type": "Major",
+    "suit": null,
+    "value": 11,
+    "meanings": {
+      "upright": "Fairness. Truth. Cause and effect. Law. Clarity. Accountability.",
+      "reversed": "Unfairness. Dishonesty. Lack of accountability. Bias. Injustice."
+    },
+    "description": "Truth and integrity will restore balance to all things."
+  },
+  {
+    "id": "major_12_the_hanged_man",
+    "name": "The Hanged Man",
+    "arcana_type": "Major",
+    "suit": null,
+    "value": 12,
+    "meanings": {
+      "upright": "Surrender. Letting go. New perspective. Pause. Awakening.",
+      "reversed": "Stalling. Resistance. Delays. Unnecessary sacrifice. Apathy."
+    },
+    "description": "Sometimes pausing is the fastest way to move forward."
+  },
+  {
+    "id": "major_13_death",
+    "name": "Death",
+    "arcana_type": "Major",
+    "suit": null,
+    "value": 13,
+    "meanings": {
+      "upright": "Endings. Transformation. Transition. Letting go. Renewal. Inevitable change.",
+      "reversed": "Resistance to change. Fear of grief. Holding on. Stagnation."
+    },
+    "description": "Closing one door allows a brand new story to begin."
+  },
+  {
+    "id": "major_14_temperance",
+    "name": "Temperance",
+    "arcana_type": "Major",
+    "suit": null,
+    "value": 14,
+    "meanings": {
+      "upright": "Balance. Moderation. Patience. Purpose. Harmony. Synthesis.",
+      "reversed": "Imbalance. Excess. Lack of patience. Extreme behavior. Clash."
+    },
+    "description": "Blend opposing forces with patience to find middle ground."
+  },
+  {
+    "id": "major_15_the_devil",
+    "name": "The Devil",
+    "arcana_type": "Major",
+    "suit": null,
+    "value": 15,
+    "meanings": {
+      "upright": "Shadow self. Attachment. Addiction. Restriction. Materialism. Illusion of trap.",
+      "reversed": "Freedom. Release. Breaking chains. Overcoming obsession. Reclaiming power."
+    },
+    "description": "Recognize that the chains holding you are yours to break."
+  },
+  {
+    "id": "major_16_the_tower",
+    "name": "The Tower",
+    "arcana_type": "Major",
+    "suit": null,
+    "value": 16,
+    "meanings": {
+      "upright": "Collapse. Upheaval. Destruction. Foundational shift. Reality check. Ambition. Adversity",
+      "reversed": "Continued oppression. Trapped. Confinement. Locked in old ways. Weak foundation. Avoidance"
+    },
+    "description": "Always expect the unexpected"
+  },
+  {
+    "id": "major_17_the_star",
+    "name": "The Star",
+    "arcana_type": "Major",
+    "suit": null,
+    "value": 17,
+    "meanings": {
+      "upright": "Hope. Faith. Purpose. Renewal. Inspiration. Spirituality. Peace.",
+      "reversed": "Despair. Lack of faith. Discouragement. Disconnection. Pessimism."
+    },
+    "description": "A beacon of hope guides you through the darkest night."
+  },
+  {
+    "id": "major_18_the_moon",
+    "name": "The Moon",
+    "arcana_type": "Major",
+    "suit": null,
+    "value": 18,
+    "meanings": {
+      "upright": "Illusion. Fear. Anxiety. Subconscious. Intuition. Unclear path.",
+      "reversed": "Release of fear. Unveiling truth. Overcoming anxiety. Clarity."
+    },
+    "description": "Trust your intuition when the path ahead is shadowy."
+  },
+  {
+    "id": "major_19_the_sun",
+    "name": "The Sun",
+    "arcana_type": "Major",
+    "suit": null,
+    "value": 19,
+    "meanings": {
+      "upright": "Glory. Gain. Satisfaction. Radiance. Positivity. Strength. Vitality.",
+      "reversed": "Unhappiness. Negativity. Failure. Lonliness. Need for reflection."
+    },
+    "description": "Success lies ahead if you keep to the path."
+  },
+  {
+    "id": "major_20_judgement",
+    "name": "Judgement",
+    "arcana_type": "Major",
+    "suit": null,
+    "value": 20,
+    "meanings": {
+      "upright": "Rebirth. Inner calling. Absolution. Reflection. Awakening. Evaluation.",
+      "reversed": "Self-doubt. Harsh criticism. Ignored calling. Regret. Hesitation."
+    },
+    "description": "Forgive the past and answer the higher call of your future."
+  },
+  {
+    "id": "major_21_the_world",
+    "name": "The World",
+    "arcana_type": "Major",
+    "suit": null,
+    "value": 21,
+    "meanings": {
+      "upright": "Accomplishment. Success. Completion. Synthesis. Perfection. Recognition. Mastery.",
+      "reversed": "Incompletion. Lack of closure. Delays. Seeking shortcuts. Frustration."
+    },
+    "description": "A major chapter concludes with fulfillment and balance."
+  },
+  {
+    "id": "minor_wands_1_ace",
+    "name": "Ace of Wands",
+    "arcana_type": "Minor",
+    "suit": "Wands",
+    "value": 1,
+    "meanings": {
+      "upright": "Inspiration. New opportunities. Growth. Potential. Spark. Creative power.",
+      "reversed": "Delays. Lack of passion. Blocks. Missed opportunities. Hesitation."
+    },
+    "description": "Catch the creative spark and turn ambition into action."
+  },
+  {
+    "id": "minor_wands_2_two",
+    "name": "Two of Wands",
+    "arcana_type": "Minor",
+    "suit": "Wands",
+    "value": 2,
+    "meanings": {
+      "upright": "Future planning. Progress. Decisions. Discovery. Leaving comfort zone.",
+      "reversed": "Fear of change. Bad planning. Overwhelmed. Hesitation. Safety-seeking."
+    },
+    "description": "Step up and plan your next big conquest with confidence."
+  },
+  {
+    "id": "minor_wands_3_three",
+    "name": "Three of Wands",
+    "arcana_type": "Minor",
+    "suit": "Wands",
+    "value": 3,
+    "meanings": {
+      "upright": "Preparation. Planning. Expansion. Established force. Nobility. Success. Openness. Honesty.",
+      "reversed": "Arrogance. Obstinacy. Delays. Trecherous. Obstacles. Disorganization."
+    },
+    "description": "Find your inspiration to take action."
+  },
+  {
+    "id": "minor_wands_4_four",
+    "name": "Four of Wands",
+    "arcana_type": "Minor",
+    "suit": "Wands",
+    "value": 4,
+    "meanings": {
+      "upright": "Celebration. Joy. Harmony. Relaxation. Home. Community. Gathering.",
+      "reversed": "Family tension. Cancelled celebration. Instability. Transition chaos."
+    },
+    "description": "Take time to celebrate your achievements with loved ones."
+  },
+  {
+    "id": "minor_wands_5_five",
+    "name": "Five of Wands",
+    "arcana_type": "Minor",
+    "suit": "Wands",
+    "value": 5,
+    "meanings": {
+      "upright": "Conflict. Disagreements. Competition. Tension. Diversity. Brainstorming.",
+      "reversed": "Avoiding conflict. Compromise. Burning out. Resolution. Agreement."
+    },
+    "description": "Navigate friction gracefully; competition fuels growth."
+  },
+  {
+    "id": "minor_wands_6_six",
+    "name": "Six of Wands",
+    "arcana_type": "Minor",
+    "suit": "Wands",
+    "value": 6,
+    "meanings": {
+      "upright": "Victory. Triumph. Recognition. Public reward. Pride. Confidence.",
+      "reversed": "Egoism. Disgrace. Lack of recognition. Fall from grace. Doubt."
+    },
+    "description": "Enjoy your well-earned victory and let your light shine."
+  },
+  {
+    "id": "minor_wands_7_seven",
+    "name": "Seven of Wands",
+    "arcana_type": "Minor",
+    "suit": "Wands",
+    "value": 7,
+    "meanings": {
+      "upright": "Competition. Challenge. STruggle. Advantage. Gain. Overcoming. Defense. Perseverence",
+      "reversed": "Obstacles. Ignorance. Pretense. Threats. Disempowered. Insecure."
+    },
+    "description": "There may be challenges ahead. You can face them."
+  },
+  {
+    "id": "minor_wands_8_eight",
+    "name": "Eight of Wands",
+    "arcana_type": "Minor",
+    "suit": "Wands",
+    "value": 8,
+    "meanings": {
+      "upright": "Speed. Action. Quick decisions. Fast progress. News. Travel. Momentum.",
+      "reversed": "Delays. Frustration. Hasty decisions. Miscommunication. Slowdown."
+    },
+    "description": "Things are moving fast; stay sharp and seize the momentum."
+  },
+  {
+    "id": "minor_wands_9_nine",
+    "name": "Nine of Wands",
+    "arcana_type": "Minor",
+    "suit": "Wands",
+    "value": 9,
+    "meanings": {
+      "upright": "Resilience. Persistence. Test of faith. Boundaries. Courage. Final push.",
+      "reversed": "Exhaustion. Giving up. Paranoia. Defensive walls. Stubbornness."
+    },
+    "description": "Stand firm; you are stronger and closer than you think."
+  },
+  {
+    "id": "minor_wands_10_ten",
+    "name": "Ten of Wands",
+    "arcana_type": "Minor",
+    "suit": "Wands",
+    "value": 10,
+    "meanings": {
+      "upright": "Burden. Responsibility. Hard work. Stress. Overwhelmed. Completion near.",
+      "reversed": "Delegating. Releasing pressure. Collapse under stress. Burnout."
+    },
+    "description": "Lighten your load by setting boundaries or asking for help."
+  },
+  {
+    "id": "minor_wands_11_page",
+    "name": "Page of Wands",
+    "arcana_type": "Minor",
+    "suit": "Wands",
+    "value": 11,
+    "meanings": {
+      "upright": "Exploration. Enthusiasm. Discovery. Free spirit. Fresh ideas. Passion.",
+      "reversed": "Procrastination. Lack of focus. Pessimism. Bad news. Childishness."
+    },
+    "description": "Follow your curiosity down new and exciting avenues."
+  },
+  {
+    "id": "minor_wands_12_knight",
+    "name": "Knight of Wands",
+    "arcana_type": "Minor",
+    "suit": "Wands",
+    "value": 12,
+    "meanings": {
+      "upright": "Energy. Passion. Adventure. Generous. Impetuous. Courage. Departure.",
+      "reversed": "Evil-minded. Cruel. Bigoted. Hurried. Careless. Discord."
+    },
+    "description": "Now is a good time to do what you want to do."
+  },
+  {
+    "id": "minor_wands_13_queen",
+    "name": "Queen of Wands",
+    "arcana_type": "Minor",
+    "suit": "Wands",
+    "value": 13,
+    "meanings": {
+      "upright": "Courage. Confidence. Independence. Warmth. Determination. Vivacity.",
+      "reversed": "Jealousy. Insecurity. Demanding. Overbearing. Shrinking back."
+    },
+    "description": "Exude warmth and self-assurance in everything you undertake."
+  },
+  {
+    "id": "minor_wands_14_king",
+    "name": "King of Wands",
+    "arcana_type": "Minor",
+    "suit": "Wands",
+    "value": 14,
+    "meanings": {
+      "upright": "Leadership. Vision. Entrepreneur. High honor. Influence. Bold decision.",
+      "reversed": "Impatience. High expectations. Tyrannical. Ruthless ambition."
+    },
+    "description": "Lead with vision and inspire others to follow your passion."
+  },
+  {
+    "id": "minor_cups_1_ace",
+    "name": "Ace of Cups",
+    "arcana_type": "Minor",
+    "suit": "Cups",
+    "value": 1,
+    "meanings": {
+      "upright": "Unconditional love. New feelings. Compassion. Overflowing emotion. Intuition.",
+      "reversed": "Blocked emotions. Emptiness. Self-love needed. Sadness. Disillusionment."
+    },
+    "description": "Open your heart to receive and give emotional abundance."
+  },
+  {
+    "id": "minor_cups_2_two",
+    "name": "Two of Cups",
+    "arcana_type": "Minor",
+    "suit": "Cups",
+    "value": 2,
+    "meanings": {
+      "upright": "Partnership. Mutual attraction. Connection. Harmony. Shared joy. Unity.",
+      "reversed": "Breakdown in communication. Imbalance. Tension. Misaligned values."
+    },
+    "description": "Nurture connections built on respect and mutual trust."
+  },
+  {
+    "id": "minor_cups_3_three",
+    "name": "Three of Cups",
+    "arcana_type": "Minor",
+    "suit": "Cups",
+    "value": 3,
+    "meanings": {
+      "upright": "Friendship. Celebration. Community. Creativity. Gathering. Support.",
+      "reversed": "Isolation. Overindulgence. Gossip. Group conflict. Left out."
+    },
+    "description": "Gather with your tribe to share joy and mutual support."
+  },
+  {
+    "id": "minor_cups_4_four",
+    "name": "Four of Cups",
+    "arcana_type": "Minor",
+    "suit": "Cups",
+    "value": 4,
+    "meanings": {
+      "upright": "Contemplation. Apathy. Seclusion. Closed. Lack of risk. Boredom. Demotivation",
+      "reversed": "New approaches to old problems. New events and possibilities. Enthusiasm for life. Acceptance"
+    },
+    "description": "Don't let your focus close you to new ideas."
+  },
+  {
+    "id": "minor_cups_5_five",
+    "name": "Five of Cups",
+    "arcana_type": "Minor",
+    "suit": "Cups",
+    "value": 5,
+    "meanings": {
+      "upright": "Regret. Loss. Grief. Disappointment. Focusing on the negative.",
+      "reversed": "Moving on. Acceptance. Forgiveness. Recovery. Finding hope."
+    },
+    "description": "Look behind you; not all is lost if you shift your focus."
+  },
+  {
+    "id": "minor_cups_6_six",
+    "name": "Six of Cups",
+    "arcana_type": "Minor",
+    "suit": "Cups",
+    "value": 6,
+    "meanings": {
+      "upright": "Nostalgia. Memories. Innocence. Joy. Reunion. Childhood comfort.",
+      "reversed": "Living in the past. Moving forward. Independence. Forgetting roots."
+    },
+    "description": "Honor gentle memories while staying rooted in the present."
+  },
+  {
+    "id": "minor_cups_7_seven",
+    "name": "Seven of Cups",
+    "arcana_type": "Minor",
+    "suit": "Cups",
+    "value": 7,
+    "meanings": {
+      "upright": "Choices. Illusion. Wishful thinking. Opportunities. Daydreaming. Ambiguity.",
+      "reversed": "Clarity. Making a choice. Reality check. Disillusionment. Focus."
+    },
+    "description": "Filter out illusions and ground your options in reality."
+  },
+  {
+    "id": "minor_cups_8_eight",
+    "name": "Eight of Cups",
+    "arcana_type": "Minor",
+    "suit": "Cups",
+    "value": 8,
+    "meanings": {
+      "upright": "Walking away. Disillusionment. Leaving behind. Seeking higher truth.",
+      "reversed": "Fear of loss. Staying stuck. Stagnation. Fear of the unknown."
+    },
+    "description": "Have the bravery to leave behind what no longer serves you."
+  },
+  {
+    "id": "minor_cups_9_nine",
+    "name": "Nine of Cups",
+    "arcana_type": "Minor",
+    "suit": "Cups",
+    "value": 9,
+    "meanings": {
+      "upright": "Happiness. Compassion. Trust in the universe. High minded. Optimism.",
+      "reversed": "Selfishness. Greed. Materialism. Mistakes. Imperfections."
+    },
+    "description": "Everything has turned out well. Enjoy your success."
+  },
+  {
+    "id": "minor_cups_10_ten",
+    "name": "Ten of Cups",
+    "arcana_type": "Minor",
+    "suit": "Cups",
+    "value": 10,
+    "meanings": {
+      "upright": "Belonging. Happiness. Lasting success. Home. Feeling blessed. Generosity. Contentment. Family.",
+      "reversed": "Dissipation. Pity. Quietness. Waste. Arguments. Disunity."
+    },
+    "description": "Everything you've planned for has worked out."
+  },
+  {
+    "id": "minor_cups_11_page",
+    "name": "Page of Cups",
+    "arcana_type": "Minor",
+    "suit": "Cups",
+    "value": 11,
+    "meanings": {
+      "upright": "Sweetness. Gentleness. Reflective. Self-exploration. Intuition. Kindness. Sensitivity.",
+      "reversed": "Flatterer. Selfish. Deviation from the path. Naive. Irrational. Daydreaming. Immature."
+    },
+    "description": "Don't let your emotions get in the way."
+  },
+  {
+    "id": "minor_cups_12_knight",
+    "name": "Knight of Cups",
+    "arcana_type": "Minor",
+    "suit": "Cups",
+    "value": 12,
+    "meanings": {
+      "upright": "Romance. Charm. Imagination. Following the heart. Proposals. Idealism.",
+      "reversed": "Moodiness. Unrealistic expectations. Jealousy. Overly dramatic."
+    },
+    "description": "Follow your heart's calling with gentleness and grace."
+  },
+  {
+    "id": "minor_cups_13_queen",
+    "name": "Queen of Cups",
+    "arcana_type": "Minor",
+    "suit": "Cups",
+    "value": 13,
+    "meanings": {
+      "upright": "Empathy. Compassion. Intuitive healing. Emotional stability. Caring.",
+      "reversed": "Emotional martyrdom. Co-dependency. Overwhelmed. Insecurity."
+    },
+    "description": "Offer compassion to others while keeping your spirit calm."
+  },
+  {
+    "id": "minor_cups_14_king",
+    "name": "King of Cups",
+    "arcana_type": "Minor",
+    "suit": "Cups",
+    "value": 14,
+    "meanings": {
+      "upright": "Emotional balance. Control. Generosity. Wisdom. Calm demeanor. Diplomacy.",
+      "reversed": "Emotional manipulation. Volatility. Coldness. Moody outburst."
+    },
+    "description": "Master your emotions so you can lead with wisdom and peace."
+  },
+  {
+    "id": "minor_swords_1_ace",
+    "name": "Ace of Swords",
+    "arcana_type": "Minor",
+    "suit": "Swords",
+    "value": 1,
+    "meanings": {
+      "upright": "Logic. Power. Heart of the matter. Insight. Clarity. Breakthrough. Ideas",
+      "reversed": "Tyranny. Disaster. Self-destruction. Chaos,"
+    },
+    "description": "Speak your mind to solve your problems."
+  },
+  {
+    "id": "minor_swords_2_two",
+    "name": "Two of Swords",
+    "arcana_type": "Minor",
+    "suit": "Swords",
+    "value": 2,
+    "meanings": {
+      "upright": "Stalling. Indecision. Strength through suffering. Peace restored. Stalemate.",
+      "reversed": "Bad choices. Decisiveness. Action. Disloyalty. Misrepresentation."
+    },
+    "description": "Listen to your inner voice when making choices."
+  },
+  {
+    "id": "minor_swords_3_three",
+    "name": "Three of Swords",
+    "arcana_type": "Minor",
+    "suit": "Swords",
+    "value": 3,
+    "meanings": {
+      "upright": "Heartbreak. Sorrow. Rejection. Painful truth. Separation. Grief.",
+      "reversed": "Healing. Forgiveness. Releasing pain. Moving past heartbreak."
+    },
+    "description": "Acknowledge pain so that genuine healing can begin."
+  },
+  {
+    "id": "minor_swords_4_four",
+    "name": "Four of Swords",
+    "arcana_type": "Minor",
+    "suit": "Swords",
+    "value": 4,
+    "meanings": {
+      "upright": "Rest. Contemplation. Recovery. Mental break. Solitude. Quiet reflection.",
+      "reversed": "Exhaustion. Burnout. Restlessness. Stagnation. Forced action."
+    },
+    "description": "Grant your mind the restful solitude it needs to recharge."
+  },
+  {
+    "id": "minor_swords_5_five",
+    "name": "Five of Swords",
+    "arcana_type": "Minor",
+    "suit": "Swords",
+    "value": 5,
+    "meanings": {
+      "upright": "Unbridled ambition. Win at all costs. Conflict. Sneakiness. Empty victory.",
+      "reversed": "Reconciliation. Cutting losses. Moving past feud. Regret."
+    },
+    "description": "Pick your battles carefully; some victories cost too much."
+  },
+  {
+    "id": "minor_swords_6_six",
+    "name": "Six of Swords",
+    "arcana_type": "Minor",
+    "suit": "Swords",
+    "value": 6,
+    "meanings": {
+      "upright": "Transition. Exit. Moving beyond. Problem solving. A journey. Deeper thinking. Research.",
+      "reversed": "Stuck. Stalemate. Unwanted proposals. Unaccepted offers."
+    },
+    "description": "Moving toward quieter waters will ease your mind."
+  },
+  {
+    "id": "minor_swords_7_seven",
+    "name": "Seven of Swords",
+    "arcana_type": "Minor",
+    "suit": "Swords",
+    "value": 7,
+    "meanings": {
+      "upright": "Strategy. Deceit. Stealth. Resourcefulness. Independence. Tactics.",
+      "reversed": "Exposed secrets. Confession. Coming clean. Poor strategy."
+    },
+    "description": "Be clever and strategic, but keep your integrity intact."
+  },
+  {
+    "id": "minor_swords_8_eight",
+    "name": "Eight of Swords",
+    "arcana_type": "Minor",
+    "suit": "Swords",
+    "value": 8,
+    "meanings": {
+      "upright": "Self-imposed restriction. Victim mentality. Trapped mind. Powerless.",
+      "reversed": "Taking control. Freedom. New perspective. Overcoming fear."
+    },
+    "description": "Recognize that the blindfold keeping you trapped is self-imposed."
+  },
+  {
+    "id": "minor_swords_9_nine",
+    "name": "Nine of Swords",
+    "arcana_type": "Minor",
+    "suit": "Swords",
+    "value": 9,
+    "meanings": {
+      "upright": "Anxiety. Overthinking. Nightmares. Regret. Fear. Insomnia. Guilt.",
+      "reversed": "Releasing worry. Light at end of tunnel. Hope. Overcoming fear."
+    },
+    "description": "Worrying creates shadows; step into the light of truth."
+  },
+  {
+    "id": "minor_swords_10_ten",
+    "name": "Ten of Swords",
+    "arcana_type": "Minor",
+    "suit": "Swords",
+    "value": 10,
+    "meanings": {
+      "upright": "Ruin. Defeat. Failure. Insolence. Overthrow. Speaking many words. Hopelessness.",
+      "reversed": "Recovery. Regeneration. Rebirth. Beneficial. Improvement. Advantage. Profit."
+    },
+    "description": "It has ended & finished, for better or worse."
+  },
+  {
+    "id": "minor_swords_11_page",
+    "name": "Page of Swords",
+    "arcana_type": "Minor",
+    "suit": "Swords",
+    "value": 11,
+    "meanings": {
+      "upright": "Restless. Energetic. Talkative. Eager. Curious. Aggressive.",
+      "reversed": "Frivolous. Cunning. Careless. Defensive. Incompetent. Ideas without action. Gossip."
+    },
+    "description": "Take your time to think before you act."
+  },
+  {
+    "id": "minor_swords_12_knight",
+    "name": "Knight of Swords",
+    "arcana_type": "Minor",
+    "suit": "Swords",
+    "value": 12,
+    "meanings": {
+      "upright": "Action-oriented. Driven. Sharp mind. Fast thinker. Direct communicator.",
+      "reversed": "Impulsive. Reckless. Rude. Blunt. Charging blindly forward."
+    },
+    "description": "Charge ahead with intellect, but watch where your words land."
+  },
+  {
+    "id": "minor_swords_13_queen",
+    "name": "Queen of Swords",
+    "arcana_type": "Minor",
+    "suit": "Swords",
+    "value": 13,
+    "meanings": {
+      "upright": "Intelligent. Quick. Complexity. Graceful. Observant. Preceptive.",
+      "reversed": "Critical. Cruel. Overbearing. Bitter. Deceitful. Unreliable. Dismissive."
+    },
+    "description": "Your clear communication expresses what's best for all."
+  },
+  {
+    "id": "minor_swords_14_king",
+    "name": "King of Swords",
+    "arcana_type": "Minor",
+    "suit": "Swords",
+    "value": 14,
+    "meanings": {
+      "upright": "Precision. Articulate. Truthful. Cautious. Design & plans. Controlled but determined.",
+      "reversed": "Malicious. Plotting. Obstinate. Harsh. Severe. Ruthless. Manipulation."
+    },
+    "description": "Think things through from all perspectives."
+  },
+  {
+    "id": "minor_pentacles_1_ace",
+    "name": "Ace of Pentacles",
+    "arcana_type": "Minor",
+    "suit": "Pentacles",
+    "value": 1,
+    "meanings": {
+      "upright": "New financial opportunity. Abundance. Prosperity. Security. Manifestation.",
+      "reversed": "Missed opportunity. Financial instability. Poor investment. Greed."
+    },
+    "description": "Plant seeds of effort today for tangible rewards tomorrow."
+  },
+  {
+    "id": "minor_pentacles_2_two",
+    "name": "Two of Pentacles",
+    "arcana_type": "Minor",
+    "suit": "Pentacles",
+    "value": 2,
+    "meanings": {
+      "upright": "Balance. Adaptability. Prioritization. Time management. Flexibility.",
+      "reversed": "Disorganization. Overwhelmed. Financial chaos. Mismanaged priorities."
+    },
+    "description": "Juggling multiple priorities requires poise and adaptability."
+  },
+  {
+    "id": "minor_pentacles_3_three",
+    "name": "Three of Pentacles",
+    "arcana_type": "Minor",
+    "suit": "Pentacles",
+    "value": 3,
+    "meanings": {
+      "upright": "Cooperation. Gain. Teamwork. Creativity. Realization. Influence. Common goals.",
+      "reversed": "Low quality. Mediocrity. Lack of skill. Preoccupation. Isolation. Sloppiness. Group conflict."
+    },
+    "description": "Reach out for the help you need when you need it."
+  },
+  {
+    "id": "minor_pentacles_4_four",
+    "name": "Four of Pentacles",
+    "arcana_type": "Minor",
+    "suit": "Pentacles",
+    "value": 4,
+    "meanings": {
+      "upright": "Security. Saving. Control. Stability. Boundaries. Material comfort.",
+      "reversed": "Greed. Materialism. Possessiveness. Fear of loss. Financial tightness."
+    },
+    "description": "Protect your achievements, but don't cling too tightly."
+  },
+  {
+    "id": "minor_pentacles_5_five",
+    "name": "Five of Pentacles",
+    "arcana_type": "Minor",
+    "suit": "Pentacles",
+    "value": 5,
+    "meanings": {
+      "upright": "Hardship. Isolation. Financial worry. Insecurity. Feeling left out.",
+      "reversed": "Recovery. Overcoming hardship. Financial improvement. Hope."
+    },
+    "description": "Even in lean times, support and warmth are nearby if you ask."
+  },
+  {
+    "id": "minor_pentacles_6_six",
+    "name": "Six of Pentacles",
+    "arcana_type": "Minor",
+    "suit": "Pentacles",
+    "value": 6,
+    "meanings": {
+      "upright": "Generosity. Giving and receiving. Sharing. Charity. Balance of wealth.",
+      "reversed": "Strings attached. One-sided debt. Power imbalance. Selfishness."
+    },
+    "description": "Share your blessings freely; kindness creates ongoing abundance."
+  },
+  {
+    "id": "minor_pentacles_7_seven",
+    "name": "Seven of Pentacles",
+    "arcana_type": "Minor",
+    "suit": "Pentacles",
+    "value": 7,
+    "meanings": {
+      "upright": "Planning. Progress. Perseverance. Diligence. Reflection. Necessity. Remembering.",
+      "reversed": "Waste. Disorganization. Chaos. Giving up. Impatience. No reward. Imprudence."
+    },
+    "description": "Look back on what you have achieved & set new goals."
+  },
+  {
+    "id": "minor_pentacles_8_eight",
+    "name": "Eight of Pentacles",
+    "arcana_type": "Minor",
+    "suit": "Pentacles",
+    "value": 8,
+    "meanings": {
+      "upright": "Apprenticeship. Craftsmanship. Skill development. Mastery. Dedication.",
+      "reversed": "Lack of effort. Short cuts. Perfectionism. Repetitive task burnout."
+    },
+    "description": "Focus on honing your craft; mastery comes through practice."
+  },
+  {
+    "id": "minor_pentacles_9_nine",
+    "name": "Nine of Pentacles",
+    "arcana_type": "Minor",
+    "suit": "Pentacles",
+    "value": 9,
+    "meanings": {
+      "upright": "Self-reliance. Luxury. Independence. Reward. Financial stability. Grace.",
+      "reversed": "Over-spending. Superficiality. Financial dependence. Lonely success."
+    },
+    "description": "Enjoy the fruits of your hard work and personal independence."
+  },
+  {
+    "id": "minor_pentacles_10_ten",
+    "name": "Ten of Pentacles",
+    "arcana_type": "Minor",
+    "suit": "Pentacles",
+    "value": 10,
+    "meanings": {
+      "upright": "Legacy. Wealth. Long-term security. Tradition. Family fulfillment.",
+      "reversed": "Financial risk. Family disputes. Loss of stability. Fleeting wealth."
+    },
+    "description": "Build long-lasting security that benefits both you and others."
+  },
+  {
+    "id": "minor_pentacles_11_page",
+    "name": "Page of Pentacles",
+    "arcana_type": "Minor",
+    "suit": "Pentacles",
+    "value": 11,
+    "meanings": {
+      "upright": "Ambition. Learning. Practical start. New goal. Financial opportunity.",
+      "reversed": "Lack of progress. Procrastination. Short-term thinking. Lazy effort."
+    },
+    "description": "Stay grounded and focused as you learn new practical skills."
+  },
+  {
+    "id": "minor_pentacles_12_knight",
+    "name": "Knight of Pentacles",
+    "arcana_type": "Minor",
+    "suit": "Pentacles",
+    "value": 12,
+    "meanings": {
+      "upright": "Hard work. Productivity. Routine. Dependability. Patience. Thoroughness.",
+      "reversed": "Stagnation. Feeling stuck. Boredom. Workaholism. Rigid routine."
+    },
+    "description": "Consistent, methodical effort will reliably carry you across the finish line."
+  },
+  {
+    "id": "minor_pentacles_13_queen",
+    "name": "Queen of Pentacles",
+    "arcana_type": "Minor",
+    "suit": "Pentacles",
+    "value": 13,
+    "meanings": {
+      "upright": "Nurturing. Practicality. Financial security. Comfort. Down-to-earth.",
+      "reversed": "Work-life imbalance. Self-neglect. Materialistic smothering."
+    },
+    "description": "Provide comfort and care for yourself and your environment."
+  },
+  {
+    "id": "minor_pentacles_14_king",
+    "name": "King of Pentacles",
+    "arcana_type": "Minor",
+    "suit": "Pentacles",
+    "value": 14,
+    "meanings": {
+      "upright": "Realistic. Solid. Good character. Intelligence. Steady. Reliable. Providing.",
+      "reversed": "Greed. Stubbornness. Material fixation. Rigidity. Poor judgment."
+    },
+    "description": "Maintain a steady, reliable hand in managing your resources."
+  }
+]

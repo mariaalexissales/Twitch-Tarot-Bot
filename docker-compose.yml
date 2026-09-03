@@ -1,0 +1,28 @@
+version: "3.8"
+services:
+  bot:
+    build: .
+    environment:
+      - TWITCH_TOKEN=${TWITCH_TOKEN}
+      - TWITCH_USER=${TWITCH_USER}
+      - TWITCH_CHANNEL=${TWITCH_CHANNEL}
+      - DATABASE_URL=postgres://tarot:secret@postgres:5432/tarot_ledger?sslmode=disable
+      - REDIS_URL=redis://redis:6379/0
+      - ENV=development
+    depends_on:
+      - postgres
+      - redis
+
+  postgres:
+    image: postgres:16-alpine
+    environment:
+      POSTGRES_USER: tarot
+      POSTGRES_PASSWORD: secret
+      POSTGRES_DB: tarot_ledger
+    ports:
+      - "5432:5432"
+
+  redis:
+    image: redis:7-alpine
+    ports:
+      - "6379:6379"

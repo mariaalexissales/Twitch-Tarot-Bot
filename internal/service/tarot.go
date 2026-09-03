@@ -1,55 +1,39 @@
 package service
 
 import (
-	"math/rand"
-	"time"
+	"context"
+	"fmt"
+
 	"twitch-tarot-bot/internal/domain"
 	"twitch-tarot-bot/internal/repository"
 )
 
-type Tarot struct {
+type TarotService struct {
 	repo *repository.CardRepository
-	rng  *rand.Rand
+	rand domain.Randomizer
 }
 
-func NewTarot(repo *repository.CardRepository) *Tarot {
-	return &Tarot{
-		repo: repo,
-		rng:  rand.New(rand.NewSource(time.Now().UnixNano())),
+func NewTarotService(repo *repository.CardRepository, rand domain.Randomizer) *TarotService {
+	return &TarotService{repo: repo, rand: rand}
+}
+
+func (s *TarotService) Draw(ctx context.Context, n int) ([]domain.Card, error) {
+	cards, err := s.repo.GetAll(ctx)
+	if err != nil {
+		return nil, err
 	}
-}
-
-func StringPtr(s string) *string {
-	return &s
-}
-
-func (t *Tarot) DrawSingle() domain.DrawResult {
-	cards := t.repo.GetRandomCards(1)
-	return t.buildDrawResult(cards[0], nil)
-}
-
-func (t *Tarot) DrawThreeCardSpread() []domain.DrawResult {
-	cards := t.repo.GetRandomCards(3)
-	positions := []string{"Past", "Present", "Future"}
-
-	results := make([]domain.DrawResult, 3)
-	for i, card := range cards {
-		results[i] = t.buildDrawResult(card, StringPtr(positions[i]))
-	}
-	return results
-}
-
-func (t *Tarot) buildDrawResult(card domain.Card, position *string) domain.DrawResult {
-	meaning := card.Meanings.Upright
-	isReversed := t.rng.Intn(2) == 1
-	if isReversed {
-		meaning = card.Meanings.Reversed
+	if n <= 0 || n > len(cards) {
+		return nil, fmt.Errorf("invalid number of cards requested: %d", n)
 	}
 
-	return domain.DrawResult{
-		Card:       card,
-		IsReversed: isReversed,
-		Meaning:    meaning,
-		Position:   position,
+	drawn := make([]domain.Card, len(cards))
+	copy(drawn, cards)
+
+	// Partial Fisher-Yates: shuffle only 'n' positions
+	for i := 0; i < n; i++ {
+		j := i + s.rand.IntN(len(drawn)-i)
+		drawn[i], drawn[j] = drawn[j], drawn[i]
 	}
+
+	return drawn[:n], nil
 }

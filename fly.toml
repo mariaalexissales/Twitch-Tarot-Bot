@@ -1,0 +1,21 @@
+# The bot only dials out to Twitch chat, so there is no [http_service]:
+# nothing listens, nothing is health checked, and Fly never auto-stops it.
+#
+# Run exactly one Machine (fly deploy --ha=false). A second one would answer
+# every command twice.
+
+app = "twitch-tarot-bot"
+primary_region = "ord"
+
+[env]
+  ENV = "production"
+
+[[vm]]
+  size = "shared-cpu-1x"
+  memory = "256mb"
+
+# A rejected token exits non-zero. Capped retries leave the Machine stopped and
+# visible in `fly status` instead of restarting it forever.
+[[restart]]
+  policy = "on-failure"
+  retries = 5

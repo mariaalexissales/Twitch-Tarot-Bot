@@ -1,0 +1,11 @@
+.env
+.git
+.gitignore
+.gitattributes
+*.zip
+*.md
+LICENSE
+Dockerfile
+.dockerignore
+docker-compose.yml
+fly.toml

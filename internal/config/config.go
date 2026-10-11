@@ -7,12 +7,12 @@ import (
 )
 
 type Config struct {
-	TwitchToken   string `env:"TWITCH_TOKEN,required"`
-	TwitchUser    string `env:"TWITCH_USER,required"`
-	TwitchChannel string `env:"TWITCH_CHANNEL,required"`
-	DatabaseURL   string `env:"DATABASE_URL"`
-	RedisURL      string `env:"REDIS_URL"`
-	Environment   string `env:"ENV" envDefault:"development"`
+	TwitchOAuthToken  string `env:"TWITCH_OAUTH_TOKEN,notEmpty"`
+	TwitchBotUsername string `env:"TWITCH_BOT_USERNAME,notEmpty"`
+	TwitchChannel     string `env:"TWITCH_CHANNEL,notEmpty"`
+	DatabaseURL       string `env:"DATABASE_URL"`
+	RedisURL          string `env:"REDIS_URL"`
+	Environment       string `env:"ENV" envDefault:"development"`
 }
 
 func Load() (Config, error) {

@@ -1,7 +1,10 @@
 package twitch
 
 import (
+	"context"
+	"errors"
 	"fmt"
+	"log"
 	"strings"
 
 	"twitch-tarot-bot/internal/service"
@@ -11,10 +14,10 @@ import (
 
 type Bot struct {
 	client       *twitch.Client
-	tarotService *service.Tarot
+	tarotService *service.TarotService
 }
 
-func NewBot(username, oauthToken string, tarotService *service.Tarot) *Bot {
+func NewBot(username, oauthToken string, tarotService *service.TarotService) *Bot {
 	client := twitch.NewClient(username, oauthToken)
 
 	bot := &Bot{
@@ -23,16 +26,24 @@ func NewBot(username, oauthToken string, tarotService *service.Tarot) *Bot {
 	}
 
 	// Register event handlers
+	client.OnConnect(func() {
+		log.Println("Connected to Twitch chat.")
+	})
 	client.OnPrivateMessage(bot.handleMessage)
 
 	return bot
 }
 
 func (b *Bot) handleMessage(message twitch.PrivateMessage) {
+	ctx := context.Background()
 	msgText := strings.ToLower(message.Message)
 
 	if strings.HasPrefix(msgText, "!tarot") {
-		draw := b.tarotService.DrawSingle()
+		draw, err := b.tarotService.DrawSingle(ctx)
+		if err != nil {
+			log.Printf("Failed to draw card: %v", err)
+			return
+		}
 
 		orientation := "Upright"
 		if draw.IsReversed {
@@ -51,7 +62,11 @@ func (b *Bot) handleMessage(message twitch.PrivateMessage) {
 	}
 
 	if strings.HasPrefix(msgText, "!spread") {
-		spread := b.tarotService.DrawThreeCardSpread()
+		spread, err := b.tarotService.DrawThreeCardSpread(ctx)
+		if err != nil {
+			log.Printf("Failed to draw spread: %v", err)
+			return
+		}
 
 		var parts []string
 		for _, draw := range spread {
@@ -77,7 +92,20 @@ func (b *Bot) handleMessage(message twitch.PrivateMessage) {
 	}
 }
 
+// Start blocks until the connection is closed. It reconnects on its own after
+// network drops, so a return always means the bot is done.
 func (b *Bot) Start(channel string) error {
 	b.client.Join(channel)
-	return b.client.Connect()
+
+	err := b.client.Connect()
+	if errors.Is(err, twitch.ErrLoginAuthenticationFailed) {
+		return fmt.Errorf("twitch rejected the login, the token is expired or invalid; generate a new one and update TWITCH_OAUTH_TOKEN: %w", err)
+	}
+	return err
+}
+
+func (b *Bot) Stop() {
+	if err := b.client.Disconnect(); err != nil {
+		log.Printf("Disconnect: %v", err)
+	}
 }

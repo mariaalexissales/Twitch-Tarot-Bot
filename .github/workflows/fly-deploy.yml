@@ -17,3 +17,12 @@ jobs:
       - run: flyctl deploy --remote-only --ha=false
         env:
           FLY_API_TOKEN: ${{ secrets.FLY_API_TOKEN }}
+      # A deploy updates a stopped Machine without starting it, so a bot that hit
+      # its restart cap would stay down. Standbys are skipped: they must stay stopped.
+      - name: Start stopped Machines
+        run: |
+          flyctl machine list --json \
+            | jq -r '.[] | select(.state == "stopped" and ((.config.standbys // []) | length == 0)) | .id' \
+            | xargs -r -n1 flyctl machine start
+        env:
+          FLY_API_TOKEN: ${{ secrets.FLY_API_TOKEN }}

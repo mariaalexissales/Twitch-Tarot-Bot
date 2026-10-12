@@ -12,6 +12,12 @@ import (
 	"github.com/gempir/go-twitch-irc/v4"
 )
 
+// Commands that always get the same reply
+var staticCommands = map[string]string{
+	"!server":  "PROJECT//DAEMON (PvE) Project Zomboid server - IP: 198.27.75.118 | Port: 27145",
+	"!discord": "Join the Discord: https://discord.gg/heXQBtYUZb",
+}
+
 type Bot struct {
 	client       *twitch.Client
 	tarotService *service.TarotService
@@ -35,14 +41,28 @@ func NewBot(username, oauthToken string, tarotService *service.TarotService) *Bo
 }
 
 func (b *Bot) handleMessage(message twitch.PrivateMessage) {
-	ctx := context.Background()
-	msgText := strings.ToLower(message.Message)
+	response, ok := b.reply(context.Background(), message.Message, message.User.DisplayName)
+	if !ok {
+		return
+	}
 
-	if strings.HasPrefix(msgText, "!tarot") {
+	b.client.Say(message.Channel, response)
+}
+
+// reply builds the response to a chat message. The command is the first word,
+// so "!tarot please" works and "!tarots" does not.
+func (b *Bot) reply(ctx context.Context, text, displayName string) (string, bool) {
+	fields := strings.Fields(strings.ToLower(text))
+	if len(fields) == 0 {
+		return "", false
+	}
+
+	switch command := fields[0]; command {
+	case "!tarot":
 		draw, err := b.tarotService.DrawSingle(ctx)
 		if err != nil {
 			log.Printf("Failed to draw card: %v", err)
-			return
+			return "", false
 		}
 
 		orientation := "Upright"
@@ -50,22 +70,19 @@ func (b *Bot) handleMessage(message twitch.PrivateMessage) {
 			orientation = "Reversed"
 		}
 
-		response := fmt.Sprintf(
+		return fmt.Sprintf(
 			"@%s 🔮 You drew: %s (%s) - %s",
-			message.User.DisplayName,
+			displayName,
 			draw.Card.Name,
 			orientation,
 			draw.Meaning,
-		)
+		), true
 
-		b.client.Say(message.Channel, response)
-	}
-
-	if strings.HasPrefix(msgText, "!spread") {
+	case "!spread":
 		spread, err := b.tarotService.DrawThreeCardSpread(ctx)
 		if err != nil {
 			log.Printf("Failed to draw spread: %v", err)
-			return
+			return "", false
 		}
 
 		var parts []string
@@ -82,13 +99,15 @@ func (b *Bot) handleMessage(message twitch.PrivateMessage) {
 			parts = append(parts, fmt.Sprintf("%s%s (%s)", positionLabel, draw.Card.Name, orientation))
 		}
 
-		response := fmt.Sprintf(
+		return fmt.Sprintf(
 			"@%s 🔮 Your Spread - %s",
-			message.User.DisplayName,
+			displayName,
 			strings.Join(parts, " | "),
-		)
+		), true
 
-		b.client.Say(message.Channel, response)
+	default:
+		response, ok := staticCommands[command]
+		return response, ok
 	}
 }
 

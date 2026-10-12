@@ -6,6 +6,8 @@ A Twitch chat bot that draws tarot cards.
 | --- | --- |
 | `!tarot` | One card, upright or reversed, with its meaning. |
 | `!spread` | Three cards: Past, Present, Future. |
+| `!server` | The Project Zomboid server's name, IP and port. |
+| `!discord` | The Discord invite link. |
 
 ## Settings
 

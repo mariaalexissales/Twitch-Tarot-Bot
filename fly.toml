@@ -6,10 +6,6 @@
 app = 'twitch-tarot-bot'
 primary_region = 'ord'
 
-[build]
-[env]
-  ENV = 'production'
-
 # No [http_service]: the bot only dials out to Twitch chat. With one, Fly sees
 # no traffic and stops the Machine.
 

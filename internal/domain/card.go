@@ -28,3 +28,10 @@ type DrawResult struct {
 	Meaning    string
 	Position   *string
 }
+
+func (d DrawResult) Orientation() string {
+	if d.IsReversed {
+		return "Reversed"
+	}
+	return "Upright"
+}

@@ -7,12 +7,8 @@ import (
 
 	"twitch-tarot-bot/internal/repository"
 	"twitch-tarot-bot/internal/service"
+	"twitch-tarot-bot/internal/testutil"
 )
-
-// MockRandomizer always returns 0 for deterministic testing
-type MockRandomizer struct{}
-
-func (m MockRandomizer) IntN(n int) int { return 0 }
 
 func newTestBot(t *testing.T) (*Bot, *repository.CardRepository) {
 	t.Helper()
@@ -20,7 +16,7 @@ func newTestBot(t *testing.T) (*Bot, *repository.CardRepository) {
 	if err != nil {
 		t.Fatalf("failed to load cards: %v", err)
 	}
-	return &Bot{tarotService: service.NewTarotService(repo, MockRandomizer{})}, repo
+	return &Bot{tarotService: service.NewTarotService(repo, testutil.FirstRandomizer{})}, repo
 }
 
 func TestReplyStaticCommands(t *testing.T) {
@@ -63,7 +59,7 @@ func TestReplyTarot(t *testing.T) {
 	if !strings.HasPrefix(response, "@Viewer ") {
 		t.Errorf("expected reply to mention the viewer, got %q", response)
 	}
-	// With MockRandomizer returning 0, the draw is the first card, upright.
+	// With FirstRandomizer, the draw is the first card, upright.
 	for _, want := range []string{all[0].Name, "(Upright)", all[0].Meanings.Upright} {
 		if !strings.Contains(response, want) {
 			t.Errorf("expected %q in reply %q", want, response)

@@ -65,16 +65,11 @@ func (b *Bot) reply(ctx context.Context, text, displayName string) (string, bool
 			return "", false
 		}
 
-		orientation := "Upright"
-		if draw.IsReversed {
-			orientation = "Reversed"
-		}
-
 		return fmt.Sprintf(
 			"@%s 🔮 You drew: %s (%s) - %s",
 			displayName,
 			draw.Card.Name,
-			orientation,
+			draw.Orientation(),
 			draw.Meaning,
 		), true
 
@@ -87,16 +82,11 @@ func (b *Bot) reply(ctx context.Context, text, displayName string) (string, bool
 
 		var parts []string
 		for _, draw := range spread {
-			orientation := "Upright"
-			if draw.IsReversed {
-				orientation = "Reversed"
-			}
-
 			positionLabel := ""
 			if draw.Position != nil {
 				positionLabel = *draw.Position + ": "
 			}
-			parts = append(parts, fmt.Sprintf("%s%s (%s)", positionLabel, draw.Card.Name, orientation))
+			parts = append(parts, fmt.Sprintf("%s%s (%s)", positionLabel, draw.Card.Name, draw.Orientation()))
 		}
 
 		return fmt.Sprintf(

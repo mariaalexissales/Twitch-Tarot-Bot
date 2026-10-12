@@ -1,21 +1,22 @@
-# The bot only dials out to Twitch chat, so there is no [http_service]:
-# nothing listens, nothing is health checked, and Fly never auto-stops it.
+# fly.toml app configuration file generated for twitch-tarot-bot on 2026-10-11T14:44:13-05:00
 #
-# Run exactly one Machine (fly deploy --ha=false). A second one would answer
-# every command twice.
+# See https://fly.io/docs/reference/configuration/ for information about how to use this file.
+#
 
-app = "twitch-tarot-bot"
-primary_region = "ord"
+app = 'twitch-tarot-bot'
+primary_region = 'ord'
 
+[build]
 [env]
-  ENV = "production"
+  ENV = 'production'
+
+# No [http_service]: the bot only dials out to Twitch chat. With one, Fly sees
+# no traffic and stops the Machine.
+
+[[restart]]
+  policy = 'on-failure'
+  retries = 5
 
 [[vm]]
-  size = "shared-cpu-1x"
-  memory = "256mb"
-
-# A rejected token exits non-zero. Capped retries leave the Machine stopped and
-# visible in `fly status` instead of restarting it forever.
-[[restart]]
-  policy = "on-failure"
-  retries = 5
+  size = 'shared-cpu-1x'
+  memory = '256mb'

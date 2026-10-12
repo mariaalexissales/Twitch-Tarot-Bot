@@ -20,6 +20,7 @@ jobs:
       # A deploy updates a stopped Machine without starting it, so a bot that hit
       # its restart cap would stay down. Standbys are skipped: they must stay stopped.
       - name: Start stopped Machines
+        shell: bash
         run: |
           flyctl machine list --json \
             | jq -r '.[] | select(.state == "stopped" and ((.config.standbys // []) | length == 0)) | .id' \

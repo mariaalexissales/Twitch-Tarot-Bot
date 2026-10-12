@@ -5,20 +5,24 @@ import (
 	"fmt"
 
 	"twitch-tarot-bot/internal/domain"
-	"twitch-tarot-bot/internal/repository"
 )
 
-type TarotService struct {
-	repo *repository.CardRepository
-	rand domain.Randomizer
+// CardSource supplies the deck to draw from.
+type CardSource interface {
+	GetAll(ctx context.Context) ([]domain.Card, error)
 }
 
-func NewTarotService(repo *repository.CardRepository, rand domain.Randomizer) *TarotService {
-	return &TarotService{repo: repo, rand: rand}
+type TarotService struct {
+	cards CardSource
+	rand  domain.Randomizer
+}
+
+func NewTarotService(cards CardSource, rand domain.Randomizer) *TarotService {
+	return &TarotService{cards: cards, rand: rand}
 }
 
 func (s *TarotService) Draw(ctx context.Context, n int) ([]domain.Card, error) {
-	cards, err := s.repo.GetAll(ctx)
+	cards, err := s.cards.GetAll(ctx)
 	if err != nil {
 		return nil, err
 	}

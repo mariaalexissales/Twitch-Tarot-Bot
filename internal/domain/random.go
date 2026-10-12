@@ -9,9 +9,10 @@ type Randomizer interface {
 	IntN(n int) int
 }
 
-// CryptoRandomizer uses math/rand/v2 which is safe for concurrent use.
-type CryptoRandomizer struct{}
+// MathRandomizer draws from math/rand/v2's global source, which is randomly
+// seeded and safe for concurrent use. It is not cryptographically secure.
+type MathRandomizer struct{}
 
-func (c CryptoRandomizer) IntN(n int) int {
+func (m MathRandomizer) IntN(n int) int {
 	return rand.IntN(n)
 }
